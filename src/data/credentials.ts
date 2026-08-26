@@ -137,10 +137,9 @@ export const credentials: Credential[] = [
     name: 'IFE',
     org: 'Institution of Fire Engineers',
     category: 'Professional membership',
-    image: '/images/credentials/ife.jpeg',
+    image: '/images/credentials/ife.png',
     confirmed: false,
-    darkAsset: true,
-    note: 'Supplied file is a JPEG on black — a transparent/white version is recommended.',
+    note: 'Official logo sourced from ife.org.uk (the supplied file was a JPEG on black).',
   },
   {
     id: 'sfpe',

@@ -10,7 +10,7 @@ import { Breadcrumbs, CTABlock, PageHero, SectionHeading, SmartImage } from '../
 
 const BREADCRUMB = [
   { name: 'Home', path: '/' },
-  { name: 'Projects & Industries', path: '/projects' },
+  { name: 'Projects & Maintenance', path: '/projects' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -249,7 +249,7 @@ function ImageGallery() {
 
 export default function Projects() {
   usePageMeta({
-    title: 'Projects & Industries | DKSM Group',
+    title: 'Projects & Maintenance | DKSM Group',
     description:
       'Fire-protection and MEP engineering for industrial, commercial, education, transport and data-centre facilities across Malaysia.',
     path: '/projects',
@@ -261,7 +261,7 @@ export default function Projects() {
       <PageHero
         image="/images/backgrounds/hero-projects.webp"
         imageAlt=""
-        eyebrow="Projects & Industries"
+        eyebrow="Projects & Maintenance"
         title="Engineering Solutions Across Critical Environments"
         lead="More than 500 projects delivered across the Klang Valley and beyond — in the sectors where systems must simply work."
       />

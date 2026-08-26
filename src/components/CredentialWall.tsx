@@ -13,13 +13,13 @@ export default function CredentialWall({ limit }: { limit?: number }) {
         {items.map((c) => (
           <li
             key={c.id}
-            className={`group relative flex h-28 items-center justify-center p-5 ${c.darkAsset ? 'bg-[#0b0b0c]' : 'bg-white'}`}
+            className="group relative flex h-28 items-center justify-center bg-white p-5"
           >
             <img
               src={asset(c.image)}
               alt={`${c.org} — ${c.category.toLowerCase()}`}
               loading="lazy"
-              className="max-h-full max-w-full object-contain grayscale-[35%] transition-all duration-300 group-hover:grayscale-0"
+              className="max-h-12 w-auto max-w-[85%] object-contain grayscale-[35%] transition-all duration-300 group-hover:grayscale-0"
             />
             <span className="tech-label pointer-events-none absolute inset-x-0 bottom-1.5 text-center text-[9px] text-steel/0 transition-colors duration-300 group-hover:text-steel/90">
               {c.category}

@@ -23,7 +23,7 @@ export default function Footer() {
               ['Home', '/'],
               ['About Us', '/about'],
               ['Services & Products', '/services'],
-              ['Projects & Industries', '/projects'],
+              ['Projects & Maintenance', '/projects'],
               ['Knowledge Centre', '/knowledge'],
               ['Contact Us', '/contact'],
             ].map(([label, to]) => (

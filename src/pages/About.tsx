@@ -6,7 +6,6 @@ import { useInView } from '../lib/motion'
 import { approach, company, missionVision, timeline } from '../data/company'
 import { credentialCategories, credentials, credentialsDisclaimer } from '../data/credentials'
 import { team } from '../data/team'
-import type { TeamMember } from '../data/team'
 import { Breadcrumbs, CTABlock, PageHero, SectionHeading, SmartImage } from '../components/primitives'
 
 const BREADCRUMB = [
@@ -125,10 +124,13 @@ function MissionValues() {
             <p className="mt-3 text-[16px] leading-relaxed text-white/85">{missionVision.vision}</p>
           </div>
         </div>
-        <div className="mt-3 grid gap-px overflow-hidden rounded-[4px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-3 grid gap-px overflow-hidden rounded-[4px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {missionVision.values.map((v) => (
             <div key={v.title} className="reveal bg-ink p-7">
-              <h3 className="font-display text-[16px] font-bold">{v.title}</h3>
+              <p aria-hidden="true" className="font-display text-3xl font-extrabold text-brand-bright">
+                {v.letter}
+              </p>
+              <h3 className="mt-3 font-display text-[16px] font-bold leading-snug">{v.title}</h3>
               <p className="mt-2 text-[13.5px] leading-relaxed text-white/60">{v.text}</p>
             </div>
           ))}
@@ -207,10 +209,6 @@ function SafetyQuality() {
 function Leadership() {
   const [openId, setOpenId] = useState<string | null>(null)
   const ref = useInView<HTMLDivElement>(0.03)
-  const tiers: { tier: TeamMember['tier']; cols: string; span: string; portrait: string; nameSize: string }[] = [
-    { tier: 'Top management', cols: 'md:grid-cols-3', span: 'md:col-span-3', portrait: 'h-36 w-36', nameSize: 'text-[21px]' },
-    { tier: 'Key management', cols: 'md:grid-cols-2', span: 'md:col-span-2', portrait: 'h-28 w-28', nameSize: 'text-[19px]' },
-  ]
 
   return (
     <section className="grid-lines bg-ink py-20 text-white md:py-28">
@@ -218,73 +216,58 @@ function Leadership() {
         <SectionHeading
           eyebrow="The people behind DKSM Group"
           title="Led by the people who built it"
-          lead="The group’s leadership pairs founding experience in fire protection with decades of construction, operations and servicing practice."
+          lead="The group’s top management pairs founding experience in fire protection with decades of construction and operations practice."
           dark
         />
-
-        {tiers.map(({ tier, cols, span, portrait, nameSize }) => (
-          <div key={tier} className="mt-12">
-            <h3 className="tech-label text-white/60">{tier}</h3>
-            <div className={`mt-4 grid gap-3 ${cols}`}>
-              {team
-                .filter((m) => m.tier === tier)
-                .map((m) => {
-                  const open = openId === m.id
-                  return (
-                    <article
-                      key={m.id}
-                      className={`reveal flex flex-col items-center rounded-[4px] border border-white/10 bg-white/[0.03] p-8 text-center transition-colors duration-300 hover:border-white/25 ${open ? span : ''}`}
+        <div className="mt-12">
+          <h3 className="tech-label text-white/60">Top management</h3>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {team.map((m) => {
+              const open = openId === m.id
+              return (
+                <article
+                  key={m.id}
+                  className={`reveal flex flex-col items-center rounded-[4px] border border-white/10 bg-white/[0.03] p-8 text-center transition-colors duration-300 hover:border-white/25 ${open ? 'md:col-span-3' : ''}`}
+                >
+                  <img
+                    src={asset(m.image)}
+                    alt={`${m.name}, ${m.role}`}
+                    loading="lazy"
+                    className="h-36 w-36 rounded-full bg-white object-cover ring-1 ring-white/25"
+                  />
+                  <h4 className="mt-6 font-display text-[21px] font-bold leading-snug text-white">{m.name}</h4>
+                  <p className="tech-label mt-1 text-brand-bright">{m.role}</p>
+                  <p className="mt-4 max-w-sm text-[13.5px] leading-relaxed text-white/60">{m.summary}</p>
+                  {open && (
+                    <div className="mt-6 w-full max-w-3xl space-y-4 border-t border-white/10 pt-6 text-left text-[14px] leading-relaxed text-white/75">
+                      {m.bio.map((para) => (
+                        <p key={para.slice(0, 24)}>{para}</p>
+                      ))}
+                    </div>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setOpenId(open ? null : m.id)}
+                    aria-expanded={open}
+                    className="tech-label mt-6 flex min-h-10 items-center gap-2 text-brand-bright transition-colors hover:text-white"
+                  >
+                    {open ? 'Close' : `More about ${m.name.split(' ')[0]}`}
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      className={`transition-transform duration-300 ${open ? 'rotate-45' : ''}`}
                     >
-                      <img
-                        src={asset(m.image)}
-                        alt={`${m.name}, ${m.role}`}
-                        loading="lazy"
-                        className={`${portrait} rounded-full bg-white object-cover ring-1 ring-white/25`}
-                      />
-                      <h4 className={`mt-6 font-display ${nameSize} font-bold leading-snug text-white`}>{m.name}</h4>
-                      <p className="tech-label mt-1 text-brand-bright">{m.role}</p>
-                      <p className="mt-4 max-w-sm text-[13.5px] leading-relaxed text-white/60">{m.summary}</p>
-                      {open && (
-                        <div className="mt-6 w-full max-w-3xl space-y-4 border-t border-white/10 pt-6 text-left text-[14px] leading-relaxed text-white/75">
-                          {m.bio.map((para) => (
-                            <p key={para.slice(0, 24)}>{para}</p>
-                          ))}
-                          {m.appointments && (
-                            <ul className="space-y-1.5 pt-1 text-[13px] leading-relaxed text-white/55">
-                              {m.appointments.map((r) => (
-                                <li key={r} className="flex gap-2.5">
-                                  <span aria-hidden="true" className="mt-[7px] h-1.5 w-1.5 shrink-0 rotate-45 bg-brand-bright" />
-                                  {r}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      )}
-                      <button
-                        type="button"
-                        onClick={() => setOpenId(open ? null : m.id)}
-                        aria-expanded={open}
-                        className="tech-label mt-6 flex min-h-10 items-center gap-2 text-brand-bright transition-colors hover:text-white"
-                      >
-                        {open ? 'Close' : `More about ${m.name.split(' ')[0]}`}
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          aria-hidden="true"
-                          className={`transition-transform duration-300 ${open ? 'rotate-45' : ''}`}
-                        >
-                          <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.6" />
-                        </svg>
-                      </button>
-                    </article>
-                  )
-                })}
-            </div>
+                      <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.6" />
+                    </svg>
+                  </button>
+                </article>
+              )
+            })}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   )
@@ -356,7 +339,7 @@ function Credentials() {
               <ul className="mt-4 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((c) => (
                   <li key={c.id} className="flex items-center gap-5 bg-white p-5">
-                    <span className={`flex h-16 w-20 shrink-0 items-center justify-center rounded-[3px] border border-line p-2 ${c.darkAsset ? 'bg-[#0b0b0c]' : 'bg-white'}`}>
+                    <span className="flex h-16 w-20 shrink-0 items-center justify-center rounded-[3px] border border-line bg-white p-2">
                       <img src={asset(c.image)} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
                     </span>
                     <div>

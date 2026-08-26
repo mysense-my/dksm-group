@@ -52,7 +52,7 @@ function ContactDetails() {
         </p>
       </div>
       <div className="reveal">
-        <h2 className="tech-label text-brand">Opening hours</h2>
+        <h2 className="tech-label text-brand">Operating hours</h2>
         <dl className="mt-3 space-y-1 text-[15px] leading-relaxed text-graphite">
           {contact.businessHours.map((h) => (
             <div key={h.days} className="flex justify-between gap-6">

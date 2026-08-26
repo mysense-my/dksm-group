@@ -24,7 +24,7 @@ maintenance, technical training and authority approvals.
 | `/` | Home |
 | `/about` | About Us (story, timeline, values, safety, credentials) |
 | `/services` | Services & Products (6 service lines + product categories) |
-| `/projects` | Projects & Industries (filterable cards, client logo wall, case-study shell, industry expertise, gallery + lightbox) |
+| `/projects` | Projects & Maintenance (filterable cards, client logo wall, case-study shell, industry expertise, gallery + lightbox) |
 | `/knowledge` | Knowledge Centre (guides & education, company news, general FAQs, awards & recognition) |
 | `/contact` | Contact Us (enquiry form, contact details, opening hours, Google Maps embed) |
 
@@ -205,11 +205,21 @@ commercial use without attribution; sources are recorded here for provenance.
 | `projects/fp-chiller.webp` (+ `projects/featured.webp`) | [Pexels](https://www.pexels.com/photo/industrial-air-compressor-system-in-plant-31257317/) |
 | `projects/fp-ducting.webp` | [Pexels](https://www.pexels.com/photo/industrial-interior-with-exposed-hvac-ductwork-30749458/) |
 | `systems/fire-alarm.webp` | [Pexels](https://www.pexels.com/photo/a-red-and-black-fire-alarm-control-13060860/) |
+| `systems/sprinkler.webp` | [Pexels](https://www.pexels.com/photo/industrial-fire-sprinkler-system-pipes-37352142/) |
 | `systems/hydrant.webp` | [Pexels](https://www.pexels.com/photo/red-fire-hydrant-on-city-street-in-sunlight-6481932/) |
-| `systems/wet-riser.webp` | [Pexels](https://www.pexels.com/photo/industrial-pipes-with-colorful-valves-against-a-wall-29248902/) |
+| `systems/pressurized-hydrant.webp` | [Wikimedia Commons — "Fire Pump Room, Brisbane, 2021", CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Fire_Pump_Room,_Brisbane,_2021.jpg) |
+| `systems/wet-riser.webp` | [Pexels](https://www.pexels.com/photo/an-external-access-point-for-auto-sprinkler-and-standpipe-in-a-museum-wall-8675573/) |
+| `systems/clean-agent.webp` | [Wikimedia Commons — "Inergen Fire Protection System - from Fire Eater", CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Inergen_Fire_Protection_System_-_from_Fire_Eater.jpg) |
+| `systems/spka-panel.webp` | [Wikimedia Commons — "Fire alarm control panelB", CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Fire_alarm_control_panelB.jpg) |
 | `systems/extinguisher.webp` | [Pexels](https://www.pexels.com/photo/red-fire-extinguisher-against-wall-4805958/) |
-| `systems/emergency-lighting.webp` | [Pexels](https://www.pexels.com/photo/emergency-exit-signage-1871343/) |
+| `systems/emergency-lighting.webp` | [Pexels](https://www.pexels.com/photo/a-light-near-a-fire-exit-signage-12571092/) |
 | `systems/keluar.webp` | [Pexels](https://www.pexels.com/photo/illuminated-green-exit-sign-23523335/) |
+| `systems/fire-inspection.webp` | [Pexels](https://www.pexels.com/photo/man-in-yellow-safety-reflective-vest-with-hard-hat-doing-house-inspection-8293667/) |
+
+Wikimedia Commons images above are used under CC BY-SA 4.0 — retain these
+credits (or replace the photos with DKSM's own) before launch. The
+`credentials/ife.png` logo is the official mark from ife.org.uk, replacing
+the black-background JPEG supplied originally.
 
 ## Information still requiring client confirmation
 

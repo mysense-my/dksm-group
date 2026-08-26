@@ -152,20 +152,34 @@ export const strengths = [
 ] as const
 
 /**
- * Mission, vision and core values — verbatim from the company profile on
- * DKSM's published website (client direction: "Remain as Co. Profile").
+ * Mission, vision and core values — updated per client feedback.
  */
 export const missionVision = {
   mission:
-    'To transform the world of engineering by building the best value-added services & empowering solutions, a sense of customization, environment, and safety.',
-  vision: 'To become World’s premier building services engineering provider.',
+    'To deliver value-added engineering solutions with a focus on safety, customization, and sustainability.',
+  vision: 'To become the world’s premier provider of sustainable building services engineering.',
+  /** The DKSM core values — the letters spell the group's name. */
   values: [
-    { title: 'Leadership', text: 'Management & teamwork!' },
-    { title: 'Performance', text: 'Results matter!' },
-    { title: 'Innovation', text: 'Always strive for better!' },
-    { title: 'Safety', text: 'Life’s a gift!' },
-    { title: 'Virtue', text: 'Basic morality!' },
-    { title: 'Compassion', text: 'Restore love & kindness back into community!' },
+    {
+      letter: 'D',
+      title: 'Dedication to Leadership and Safety',
+      text: 'We prioritize safety and lead by example in every project.',
+    },
+    {
+      letter: 'K',
+      title: 'Knowledge for Innovation and Performance',
+      text: 'We use expertise and innovation to deliver quality solutions.',
+    },
+    {
+      letter: 'S',
+      title: 'Synergy through Collaboration',
+      text: 'We foster teamwork to achieve mutual success.',
+    },
+    {
+      letter: 'M',
+      title: 'Mission for Sustainability',
+      text: 'We build a sustainable future with eco-friendly practices.',
+    },
   ],
 }
 
