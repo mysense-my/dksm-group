@@ -12,7 +12,8 @@ maintenance, technical training and authority approvals.
 > (see [Information requiring confirmation](#information-still-requiring-client-confirmation))
 > and the contact form has no backend connected yet.
 
-**Live preview:** https://shazwan-mysense.github.io/DKSM-mockup/
+**Live preview:** https://mysense-my.github.io/dksm-group/
+(repo: https://github.com/mysense-my/dksm-group)
 (`main` = source code · `gh-pages` = deployed build; redeploy with
 `npm run build:pages`, copy `dist/index.html` to `dist/404.html`, and push
 `dist/` to the `gh-pages` branch)
@@ -62,7 +63,7 @@ Vite prints a local URL (default `http://localhost:5173`).
 ```bash
 npm run build        # type-checks then builds to dist/
 npm run preview      # serve the production build locally
-npm run build:pages  # build with base=/DKSM-mockup/ for GitHub Pages
+npm run build:pages  # build with base=/dksm-group/ for GitHub Pages
 ```
 
 ## Project structure

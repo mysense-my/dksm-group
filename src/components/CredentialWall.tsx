@@ -9,25 +9,20 @@ export default function CredentialWall({ limit }: { limit?: number }) {
   const items = limit ? credentials.slice(0, limit) : credentials
   return (
     <div>
-      <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-3 lg:grid-cols-6">
+      <ul className="grid grid-cols-3 items-center gap-x-8 gap-y-10 sm:grid-cols-4 lg:grid-cols-6">
         {items.map((c) => (
-          <li
-            key={c.id}
-            className="group relative flex h-28 items-center justify-center bg-white p-5"
-          >
+          <li key={c.id} className="flex items-center justify-center">
             <img
               src={asset(c.image)}
               alt={`${c.org} — ${c.category.toLowerCase()}`}
+              title={c.category}
               loading="lazy"
-              className="max-h-12 w-auto max-w-[85%] object-contain grayscale-[35%] transition-all duration-300 group-hover:grayscale-0"
+              className="max-h-12 w-auto max-w-full object-contain grayscale-[35%] transition-all duration-300 hover:grayscale-0"
             />
-            <span className="tech-label pointer-events-none absolute inset-x-0 bottom-1.5 text-center text-[9px] text-steel/0 transition-colors duration-300 group-hover:text-steel/90">
-              {c.category}
-            </span>
           </li>
         ))}
       </ul>
-      <p className="mt-4 max-w-3xl text-[12.5px] leading-relaxed text-steel">{credentialsDisclaimer}</p>
+      <p className="mt-10 max-w-3xl text-[12.5px] leading-relaxed text-steel">{credentialsDisclaimer}</p>
     </div>
   )
 }

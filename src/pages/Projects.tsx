@@ -92,33 +92,43 @@ function ProjectGallery() {
 /* Client logo wall — logos only, per client direction (14 July 2026)   */
 /* ------------------------------------------------------------------ */
 function Clients() {
-  const ref = useInView<HTMLDivElement>()
+  const ref = useInView<HTMLElement>()
+  const row = (dup: boolean) => (
+    <ul
+      className={`flex items-center gap-14 pr-14 sm:gap-20 sm:pr-20 ${dup ? 'marquee-dup' : ''}`}
+      aria-hidden={dup || undefined}
+    >
+      {clientLogos.map((c) => (
+        <li key={c.name} className="flex shrink-0 items-center justify-center">
+          <img
+            src={asset(c.image)}
+            alt={dup ? '' : c.name}
+            loading="lazy"
+            className="h-10 w-auto max-w-[150px] object-contain grayscale-[35%] transition-all duration-300 hover:grayscale-0 sm:h-12"
+          />
+        </li>
+      ))}
+    </ul>
+  )
   return (
-    <section className="rule-t bg-white py-20 md:py-24">
-      <div className="shell" ref={ref}>
+    <section ref={ref} className="rule-t bg-white py-20 md:py-24">
+      <div className="shell">
         <SectionHeading
           eyebrow="Clients"
           title="Organisations we work with"
-          lead="A selection of the organisations the group has worked with, as published by DKSM — logos only, with the work shown under the projects above."
+          lead="A selection of the organisations the group has worked with, as published by DKSM."
         />
-        <ul className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-3 lg:grid-cols-6">
-          {clientLogos.length > 0
-            ? clientLogos.map((c) => (
-                <li key={c.name} className="flex h-28 items-center justify-center bg-white p-5">
-                  <img src={asset(c.image)} alt={c.name} loading="lazy" className="max-h-full max-w-full object-contain" />
-                </li>
-              ))
-            : Array.from({ length: 6 }).map((_, i) => (
-                <li key={i} className="reveal flex h-28 items-center justify-center bg-white p-5">
-                  <span className="tech-label text-center text-[11px] leading-snug text-steel/80">
-                    Client logo
-                    <br />
-                    pending
-                  </span>
-                </li>
-              ))}
-        </ul>
       </div>
+      {clientLogos.length > 0 ? (
+        <div className="marquee reveal mt-12">
+          <div className="marquee-track">
+            {row(false)}
+            {row(true)}
+          </div>
+        </div>
+      ) : (
+        <p className="shell mt-10 text-[14px] text-steel">Client logos will appear here once supplied.</p>
+      )}
     </section>
   )
 }

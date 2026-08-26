@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:pages": "tsc -b && vite build --base=/DKSM-mockup/",
+    "build:pages": "tsc -b && vite build --base=/dksm-group/",
     "preview": "vite preview"
   },
   "dependencies": {

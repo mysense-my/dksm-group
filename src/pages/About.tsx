@@ -339,8 +339,8 @@ function Credentials() {
               <ul className="mt-4 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((c) => (
                   <li key={c.id} className="flex items-center gap-5 bg-white p-5">
-                    <span className="flex h-16 w-20 shrink-0 items-center justify-center rounded-[3px] border border-line bg-white p-2">
-                      <img src={asset(c.image)} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
+                    <span className="flex h-14 w-24 shrink-0 items-center justify-center">
+                      <img src={asset(c.image)} alt="" loading="lazy" className="max-h-12 w-auto max-w-full object-contain" />
                     </span>
                     <div>
                       <p className="font-display text-[14.5px] font-bold leading-snug text-ink">{c.name}</p>
