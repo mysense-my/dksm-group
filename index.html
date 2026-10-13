@@ -71,6 +71,19 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Opened by double-clicking the file? The app needs a web server, so
+      // explain how to view it instead of leaving a blank page.
+      if (location.protocol === 'file:') {
+        document.getElementById('root').innerHTML =
+          '<div style="max-width:560px;margin:15vh auto;padding:0 24px;font:16px/1.6 system-ui,-apple-system,sans-serif;color:#151719">' +
+          '<h1 style="font-size:24px;margin:0 0 12px">This file can’t be opened directly</h1>' +
+          '<p style="margin:0 0 12px">The DKSM website needs a small local web server to run. To view it:</p>' +
+          '<p style="margin:0 0 8px">• Double-click <b>Preview Website.command</b> in the project folder, or</p>' +
+          '<p style="margin:0">• Open the live preview: <a href="https://mysense-my.github.io/dksm-group/" style="color:#d71920">mysense-my.github.io/dksm-group</a></p>' +
+          '</div>'
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

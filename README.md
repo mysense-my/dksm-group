@@ -41,6 +41,18 @@ maintenance, technical training and authority approvals.
 - Self-hosted variable fonts (Manrope for headings, Inter for body) in
   `public/fonts/` with `font-display: swap`.
 
+## Viewing the site locally
+
+Double-clicking `index.html` shows a short notice instead of the site: this
+is a React app, and browsers won't run it from a local file. To browse it:
+
+- **Double-click `Preview Website.command`** in this folder. It starts a small
+  local server (Python, built into macOS) on the existing `dist/` build and
+  opens the site in your browser. Keep the Terminal window open while
+  browsing and close it to stop. Rebuild `dist/` with `npm run build:pages`
+  after making changes.
+- Or open the live preview: https://mysense-my.github.io/dksm-group/
+
 ## Installation
 
 Requires Node.js 18+ and npm.
