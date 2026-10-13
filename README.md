@@ -44,13 +44,15 @@ maintenance, technical training and authority approvals.
 ## Viewing the site locally
 
 Double-clicking `index.html` shows a short notice instead of the site: this
-is a React app, and browsers won't run it from a local file. To browse it:
+is a React app, and browsers won't run it from a local file. Instead:
 
-- **Double-click `Preview Website.command`** in this folder. It starts a small
-  local server (Python, built into macOS) on the existing `dist/` build and
-  opens the site in your browser. Keep the Terminal window open while
-  browsing and close it to stop. Rebuild `dist/` with `npm run build:pages`
-  after making changes.
+- **Editing:** double-click `Start Live Preview.command` (Mac) or
+  `Start Live Preview.bat` (Windows). Needs Node.js. It installs dependencies on
+  first run, starts the Vite dev server and opens the browser; saved changes
+  appear instantly.
+- **Just viewing (no Node needed):** double-click `Preview Website.command`
+  (Mac). It serves the last `dist/` build with Python. Rebuild `dist/` with
+  `npm run build:pages` after changes.
 - Or open the live preview: https://mysense-my.github.io/dksm-group/
 
 ## Installation

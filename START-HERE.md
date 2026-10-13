@@ -9,28 +9,34 @@ folder back.
 1. Install **Node.js LTS** from https://nodejs.org (the big green "LTS" button).
 2. Install **VS Code** from https://code.visualstudio.com if you don't have it.
 3. Unzip the project, then in VS Code: **File → Open Folder…** → pick `DKSM Website`.
-4. Open the terminal in VS Code (**Terminal → New Terminal**) and run:
-
-   ```
-   npm install
-   ```
-
-   This downloads the libraries into `node_modules/` (takes a minute, only needed once).
+4. That's it. The launcher in step 2 installs everything else the first time
+   (or run `npm install` in the VS Code terminal yourself).
 
 ## 2. Run the site while you work
 
-In the VS Code terminal:
+**Double-click `Start Live Preview`** in the project folder
+(`Start Live Preview.command` on Mac, `Start Live Preview.bat` on Windows).
+The first time, it installs the libraries by itself. Then it opens the site in
+your browser.
 
-```
-npm run dev
-```
+Leave that window open while you work. **Every time you save a file in VS Code,
+the browser updates by itself within a second.** No refreshing, no GitHub,
+no waiting. Close the window when you're done.
 
-Open the link it prints (usually http://localhost:5173). Leave it running: every
-time you save a file, the browser updates by itself. Press `Ctrl+C` in the
-terminal to stop it.
+(Same thing from the VS Code terminal: `npm run dev`.)
 
 Don't double-click `index.html`. It only shows a notice, because the site needs
-this dev server to run.
+this live preview to run.
+
+The first time, your computer may block it because it came from a download:
+
+- **Mac:** open **System Settings → Privacy & Security**, scroll down, and click
+  **Open Anyway** next to the "Start Live Preview" message.
+- **Windows:** on the blue "Windows protected your PC" box, click **More info →
+  Run anyway**.
+
+After that it opens normally. If it still won't run, use `npm run dev` in the
+VS Code terminal instead. It does exactly the same thing.
 
 ## 3. Where to edit what
 
