@@ -111,9 +111,17 @@ function SystemsCatalogue() {
         <h3 className="tech-label mt-12 text-steel">Supported by the MEP disciplines</h3>
         <ul className="mt-4 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {mepSystems.map((p) => (
-            <li key={p.title} className="reveal bg-white p-5">
-              <h3 className="font-display text-[15px] font-bold text-ink">{p.title}</h3>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-steel">{p.text}</p>
+            <li key={p.title} className="reveal group flex flex-col bg-white">
+              <SmartImage
+                src={p.image}
+                alt={p.imageAlt}
+                ratio="16/10"
+                imgClassName="transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-[15px] font-bold text-ink">{p.title}</h3>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-steel">{p.text}</p>
+              </div>
             </li>
           ))}
         </ul>

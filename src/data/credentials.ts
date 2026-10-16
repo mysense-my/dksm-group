@@ -1,24 +1,15 @@
 /**
- * Registrations, memberships, awards and affiliations.
  *
  * Logo files were supplied by the client (Drive: Company Logo /
  * Registrations & Memberships + Company Credentials & Awards).
  * A supplied logo is NOT treated as proof of any particular relationship:
  * every item carries a `category` and a `confirmed` flag.
- *
- * TODO: Confirm the exact nature (registration / licence / membership /
- * award) and current validity of every item marked `confirmed: false`
- * with the client before launch.
  */
 
 export type CredentialCategory =
-  | 'Authority registration'
-  | 'Contractor registration'
-  | 'Government registration'
+  | 'Regulatory & Government Registrations'
   | 'Professional membership'
   | 'Industry association'
-  | 'Award'
-  | 'Affiliation'
 
 export interface Credential {
   id: string
@@ -37,7 +28,7 @@ export const credentials: Credential[] = [
     id: 'bomba',
     name: 'BOMBA',
     org: 'Jabatan Bomba dan Penyelamat Malaysia (Fire & Rescue Department)',
-    category: 'Authority registration',
+    category: 'Regulatory & Government Registrations',
     image: '/images/credentials/bomba.png',
     confirmed: false,
     note: 'Supplied press feature reports fire-protection approval by the Fire & Rescue Department; exact registration scope to be confirmed.',
@@ -46,7 +37,7 @@ export const credentials: Credential[] = [
     id: 'cidb',
     name: 'CIDB Malaysia',
     org: 'Construction Industry Development Board',
-    category: 'Contractor registration',
+    category: 'Regulatory & Government Registrations',
     image: '/images/credentials/cidb.png',
     confirmed: false,
     note: 'Supplied logo carries Reg. No. 0120060613-SL109541 — grade and validity to be confirmed.',
@@ -55,7 +46,7 @@ export const credentials: Credential[] = [
     id: 'st',
     name: 'Suruhanjaya Tenaga',
     org: 'Energy Commission of Malaysia',
-    category: 'Authority registration',
+    category: 'Regulatory & Government Registrations',
     image: '/images/credentials/suruhanjaya-tenaga.png',
     confirmed: false,
   },
@@ -63,26 +54,26 @@ export const credentials: Credential[] = [
     id: 'span',
     name: 'SPAN',
     org: 'Suruhanjaya Perkhidmatan Air Negara (National Water Services Commission)',
-    category: 'Authority registration',
+    category: 'Regulatory & Government Registrations',
     image: '/images/credentials/span.png',
+    confirmed: false,
+  },
+  {
+     id: 'mof',
+    name: 'Ministry of Finance',
+    org: 'Kementerian Kewangan Malaysia',
+    category: 'Regulatory & Government Registrations',
+    image: '/images/credentials/mof.png',
     confirmed: false,
   },
   {
     id: 'tnb',
     name: 'Tenaga Nasional',
     org: 'Tenaga Nasional Berhad',
-    category: 'Affiliation',
+    category: 'Regulatory & Government Registrations',
     image: '/images/credentials/tnb.png',
     confirmed: false,
     note: 'Nature of registration/vendor relationship to be confirmed.',
-  },
-  {
-    id: 'mof',
-    name: 'Ministry of Finance',
-    org: 'Kementerian Kewangan Malaysia',
-    category: 'Government registration',
-    image: '/images/credentials/mof.png',
-    confirmed: false,
   },
   {
     id: 'fmm',
@@ -96,7 +87,7 @@ export const credentials: Credential[] = [
     id: 'fmm-youth',
     name: 'FMM Youth',
     org: 'Federation of Malaysian Manufacturers — Youth',
-    category: 'Affiliation',
+    category: 'Industry association',
     image: '/images/credentials/fmm-youth.png',
     confirmed: false,
   },
@@ -112,7 +103,7 @@ export const credentials: Credential[] = [
     id: 'mfpa',
     name: 'MFPA',
     org: 'Malaysian Fire Protection Association',
-    category: 'Industry association',
+    category: 'Professional membership',
     image: '/images/credentials/mfpa.png',
     confirmed: false,
   },
@@ -154,38 +145,43 @@ export const credentials: Credential[] = [
     id: 'nfpa',
     name: 'NFPA',
     org: 'National Fire Protection Association',
-    category: 'Affiliation',
+    category: 'Professional membership',
     image: '/images/credentials/nfpa.png',
     confirmed: false,
   },
+]
+
+/**
+ * Awards — kept out of the registration logo walls and shown in the
+ * Knowledge Centre's "Awards, recognition & acknowledgement" section.
+ * Year per the About-page timeline (2017).
+ */
+export interface Award {
+  id: string
+  name: string
+  org: string
+  image: string
+}
+
+export const awards: Award[] = [
   {
     id: 'power-brand',
     name: 'Malaysia Power Brand',
     org: 'Asia Entrepreneur Alliance',
-    category: 'Award',
     image: '/images/credentials/power-brand-2016.png',
-    confirmed: false,
-    note: 'Listed as 2015 on the company’s published milestone timeline; the supplied logo carries 2016/2017 — year to be confirmed.',
   },
   {
     id: 'scbea',
     name: 'Sin Chew Business Excellence Award',
     org: 'Sin Chew Daily',
-    category: 'Award',
     image: '/images/credentials/scbea-2017.png',
-    confirmed: false,
-    note: 'Listed as 2018 on the company’s published milestone timeline; the supplied press feature and logo carry 2017 — year to be confirmed.',
   },
 ]
 
 export const credentialCategories: CredentialCategory[] = [
-  'Contractor registration',
-  'Authority registration',
-  'Government registration',
+  'Regulatory & Government Registrations',
   'Professional membership',
   'Industry association',
-  'Award',
-  'Affiliation',
 ]
 
 export const credentialsDisclaimer =

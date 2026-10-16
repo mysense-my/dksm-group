@@ -173,7 +173,7 @@ export default function Contact() {
           <div>
             <SectionHeading
               eyebrow="Project enquiry"
-              title="Tell us about the project"
+              title="Tell us about the project/feedback"
               lead="No pricing lists, no obligation — a factual look at your requirement and a clear recommendation."
             />
             <div className="mt-10">

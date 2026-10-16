@@ -65,7 +65,7 @@ export const contact = {
     'Seksyen 35, 40470 Shah Alam, Selangor, Malaysia',
   ],
   /** International format, as instructed by the client. */
-  phone: '+60 16-837 8459',
+  phone: '+60 11-186 99854',
   /** As published on dksm.com.my. */
   email: 'enquiry@dksm.com.my' as string | null,
   whatsapp: 'https://wa.me/60168378459' as string | null,
@@ -205,20 +205,14 @@ export const timeline = [
   },
   {
     year: '2000',
-    title: 'ISO 9001 certified',
-    text: 'Certified to ISO 9001 for quality management.',
-    placeholder: false,
-  },
-  {
-    year: '2011',
-    title: 'Acquisition',
-    text: 'Dataran Dinamik Sdn Bhd joins the group.',
+    title: 'First Package Award',
+    text: 'Fire Protection Package.',
     placeholder: false,
   },
   {
     year: '2013',
-    title: 'First East Malaysia project',
-    text: 'Fire-protection project delivered in Kota Kinabalu, Sabah.',
+    title: 'ISO 9001 certified',
+    text: 'Certified to ISO 9001 for quality management.',
     placeholder: false,
   },
   {
@@ -229,8 +223,8 @@ export const timeline = [
   },
   {
     year: '2015',
-    title: 'Malaysia Power Brand award',
-    text: 'Recognised at the AEA Malaysia Power Brand awards.',
+    title: 'First East Malaysia project',
+    text: 'Fire-protection project delivered in Kota Kinabalu, Sabah.',
     placeholder: false,
   },
   {
@@ -240,9 +234,9 @@ export const timeline = [
     placeholder: false,
   },
   {
-    year: '2018',
-    title: 'Sin Chew Business Excellence award',
-    text: 'Recognised at the Sin Chew Business Excellence awards.',
+    year: '2017',
+    title: 'Malaysia Power Brand & Sin Chew Business Excellence Awards',
+    text: 'Recognised at the AEA Malaysia Power Brand awards, and the Sin Chew Business Excellence awards.',
     placeholder: false,
   },
   {
@@ -255,6 +249,18 @@ export const timeline = [
     year: '2023',
     title: 'New corporate office',
     text: 'A new corporate office opens, with 100+ additional resources for project support.',
+    placeholder: false,
+  },
+  {
+    year: '2024',
+    title: 'New corporate office & award',
+    text: 'Alam Impian, Shah Alam — MOSHPA Occupational Safety & Health Entrepreneur Excellent Safety Award 2024.',
+    placeholder: false,
+  },
+  {
+    year: '2026',
+    title: 'First C&S Project',
+    text: 'Obtain first C&S Package project.',
     placeholder: false,
   },
 ] as const

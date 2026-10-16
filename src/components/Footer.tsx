@@ -26,6 +26,7 @@ export default function Footer() {
               ['Projects & Maintenance', '/projects'],
               ['Knowledge Centre', '/knowledge'],
               ['Contact Us', '/contact'],
+              ['Careers', '/careers'],
             ].map(([label, to]) => (
               <li key={to}>
                 <Link to={to} className="text-white/65 transition-colors hover:text-white">

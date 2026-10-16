@@ -39,16 +39,4 @@ export const team: TeamMember[] = [
       'Stanley joined the group in 2010, bringing team-leadership experience from multinational companies. He plays a pivotal role in directing DKSM’s day-to-day business operations.',
     ],
   },
-  {
-    id: 'gnoh-siew-woo',
-    name: 'Gnoh Siew Woo',
-    role: 'Advisor',
-    image: '/images/people/gnoh-siew-woo.webp',
-    summary:
-      'Advisor to the group since 2013, with three decades in the construction industry.',
-    bio: [
-      'Mr Gnoh began his career in the early 1970s as a mathematics and electronics lecturer, then spent more than three decades in the construction industry. He founded Perniagaan Elektronik Merdeka in 1990, Selatan Johor Electrical Engineering (Ipoh) Sdn Bhd in 1993 and Dataran Dinamik in 2000, and has provided advisory services to the group since 2013.',
-      'His work spans factory, residential and commercial projects, and his expertise in systems and modules continues to guide the group’s engineers.',
-    ],
-  },
 ]

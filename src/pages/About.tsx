@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { asset } from '../lib/asset'
 import { useBreadcrumbSchema, usePageMeta } from '../lib/meta'
 import { useInView } from '../lib/motion'
@@ -178,7 +177,7 @@ function SafetyQuality() {
       <div ref={ref} className="shell grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
         <div className="reveal-scale order-2 lg:order-1">
           <SmartImage
-            src="/images/people/technician.webp"
+            src="/images/people/techniciannew.webp"
             alt="Technician carrying out equipment checks"
             ratio="4/5"
             className="h-full rounded-[4px]"
@@ -220,14 +219,14 @@ function Leadership() {
           dark
         />
         <div className="mt-12">
-          <h3 className="tech-label text-white/60">Top management</h3>
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <h3 className="tech-label text-white/60 text-center">Top management</h3>
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
             {team.map((m) => {
               const open = openId === m.id
               return (
                 <article
                   key={m.id}
-                  className={`reveal flex flex-col items-center rounded-[4px] border border-white/10 bg-white/[0.03] p-8 text-center transition-colors duration-300 hover:border-white/25 ${open ? 'md:col-span-3' : ''}`}
+                  className={`reveal flex flex-col items-center rounded-[4px] border border-white/10 bg-white/[0.03] p-8 text-center transition-colors duration-300 hover:border-white/25 ${open ? 'w-full' : 'w-full md:w-[380px]'}`}
                 >
                   <img
                     src={asset(m.image)}
@@ -286,8 +285,8 @@ function TeamOnSite() {
         <div className="mt-12 grid gap-3 sm:grid-cols-3">
           {[
             ['/images/people/team-drawings.webp', 'Engineers coordinating against the drawings before work begins'],
-            ['/images/people/site-briefing.webp', 'Toolbox briefings keep every trade aligned on the day’s works'],
-            ['/images/people/technician.webp', 'Scheduled servicing keeps systems compliant and dependable'],
+            ['/images/people/site-briefingnew.webp', 'Toolbox briefings keep every trade aligned on the day’s works'],
+            ['/images/people/techniciannew.webp', 'Scheduled servicing keeps systems compliant and dependable'],
           ].map(([src, caption]) => (
             <figure key={src} className="reveal-scale">
               <SmartImage src={src} alt={caption} ratio="4/3" className="rounded-[4px]" />
@@ -298,21 +297,6 @@ function TeamOnSite() {
         <p className="mt-8 text-[12.5px] text-steel">
           Field photography is representative — DKSM’s own site photography will be added once supplied.
         </p>
-
-        {/* Careers announcement slot — client add-on request (14 July 2026).
-            TODO: Publish actual vacancies here once provided by DKSM. */}
-        <div className="reveal mt-10 flex flex-col items-start justify-between gap-6 rounded-[4px] border border-line bg-white p-7 sm:flex-row sm:items-center">
-          <div>
-            <h3 className="font-display text-lg font-bold text-ink">Careers at DKSM Group</h3>
-            <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-steel">
-              Job vacancies and career announcements will be published here as the team grows. Interested in
-              working with DKSM in the meantime? Introduce yourself through the contact page.
-            </p>
-          </div>
-          <Link to="/contact" className="btn-outline-dark shrink-0">
-            Get in Touch
-          </Link>
-        </div>
       </div>
     </section>
   )

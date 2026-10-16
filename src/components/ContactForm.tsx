@@ -227,7 +227,7 @@ export default function ContactForm({ preselectService }: { preselectService?: s
       )}
       <div className="sm:col-span-2">
         <button type="submit" disabled={sending} className="btn-primary w-full py-3.5 disabled:opacity-60 sm:w-auto sm:px-10">
-          {sending ? 'Sending…' : 'Submit Enquiry'}
+          {sending ? 'Sending…' : 'Submit'}
         </button>
       </div>
     </form>

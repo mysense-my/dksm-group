@@ -9,6 +9,7 @@ const Services = lazy(() => import('./pages/Services'))
 const Projects = lazy(() => import('./pages/Projects'))
 const Knowledge = lazy(() => import('./pages/Knowledge'))
 const Contact = lazy(() => import('./pages/Contact'))
+const Careers = lazy(() => import('./pages/Careers'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 /**
@@ -66,6 +67,7 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/knowledge" element={<Knowledge />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
