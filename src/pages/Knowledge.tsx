@@ -6,7 +6,7 @@ import { useInView } from '../lib/motion'
 import { faqCategories } from '../data/faqs'
 import { articles } from '../data/articles'
 import { news } from '../data/news'
-import { credentials } from '../data/credentials'
+import { awards } from '../data/credentials'
 import FaqAccordion from '../components/FaqAccordion'
 import { Breadcrumbs, CTABlock, PageHero, SectionHeading } from '../components/primitives'
 
@@ -238,9 +238,6 @@ function CompanyNews() {
 /* Awards & recognition                                                 */
 /* ------------------------------------------------------------------ */
 function Awards() {
-  // No award logos have been supplied yet (see lead text below) — this list
-// stays empty until confirmed award assets are added to src/data/credentials.ts.
-const awards: typeof credentials = []
   const ref = useInView<HTMLDivElement>()
   return (
     <section className="rule-t bg-paper py-20 md:py-24">

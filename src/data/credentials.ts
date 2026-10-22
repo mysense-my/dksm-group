@@ -151,6 +151,33 @@ export const credentials: Credential[] = [
   },
 ]
 
+/**
+ * Awards — kept out of the registration logo walls and shown in the
+ * Knowledge Centre's "Awards, recognition & acknowledgement" section.
+ * Year per the About-page timeline (2017).
+ */
+export interface Award {
+  id: string
+  name: string
+  org: string
+  image: string
+}
+
+export const awards: Award[] = [
+  {
+    id: 'power-brand',
+    name: 'Malaysia Power Brand',
+    org: 'Asia Entrepreneur Alliance',
+    image: '/images/credentials/power-brand-2016.png',
+  },
+  {
+    id: 'scbea',
+    name: 'Sin Chew Business Excellence Award',
+    org: 'Sin Chew Daily',
+    image: '/images/credentials/scbea-2017.png',
+  },
+]
+
 export const credentialCategories: CredentialCategory[] = [
   'Regulatory & Government Registrations',
   'Professional membership',

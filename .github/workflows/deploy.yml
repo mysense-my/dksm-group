@@ -25,6 +25,11 @@ jobs:
       - name: Build
         run: npm run build:pages
 
+      # GitHub Pages serves 404.html for unknown paths; copying the app
+      # shell there lets direct links like /dksm-group/about load the page.
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
