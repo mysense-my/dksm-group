@@ -238,7 +238,9 @@ function CompanyNews() {
 /* Awards & recognition                                                 */
 /* ------------------------------------------------------------------ */
 function Awards() {
-  const awards = credentials.filter((c) => c.category === 'Award')
+  // No award logos have been supplied yet (see lead text below) — this list
+// stays empty until confirmed award assets are added to src/data/credentials.ts.
+const awards: typeof credentials = []
   const ref = useInView<HTMLDivElement>()
   return (
     <section className="rule-t bg-paper py-20 md:py-24">
