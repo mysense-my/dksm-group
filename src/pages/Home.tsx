@@ -249,9 +249,6 @@ function ServicesOverview() {
 /* ------------------------------------------------------------------ */
 function Industries() {
   const ref = useInView<HTMLDivElement>(0.04)
-  const spanClass = (span: string) =>
-    span === 'wide' ? 'sm:col-span-2' : span === 'tall' ? 'sm:row-span-2' : ''
-
   return (
     <section className="rule-t bg-paper py-20 md:py-28">
       <div className="shell">
@@ -260,12 +257,13 @@ function Industries() {
           title="Engineering for environments that cannot fail"
           lead="From production floors to data halls, DKSM works where system reliability, compliance and uptime are non-negotiable."
         />
-        <div ref={ref} className="mt-12 grid auto-rows-[190px] grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <div ref={ref} className="mt-12 flex flex-wrap justify-center gap-3">
           {industries.map((ind) => (
             <Link
               key={ind.id}
               to={`/projects#${ind.id}`}
-              className={`group reveal-scale relative overflow-hidden rounded-[4px] ${spanClass(ind.span)}`}
+              className="group reveal-scale relative aspect-[4/3] w-full overflow-hidden rounded-[4px] sm:w-[calc((100%-0.75rem)/2)] lg:w-[calc((100%-1.5rem)/3)]"
             >
               <img
                 src={asset(ind.image)}
@@ -286,7 +284,6 @@ function Industries() {
       </div>
     </section>
   )
-}
 
 /* ------------------------------------------------------------------ */
 /* Featured project (placeholder-honest)                                */
