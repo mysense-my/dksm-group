@@ -180,8 +180,8 @@ function SafetyQuality() {
             src="/images/people/techniciannew.webp"
             alt="Technician carrying out equipment checks"
             ratio="4/5"
-            className="h-full rounded-[4px]"
-          />
+            className="h-full rounded-lg lg:rounded-l-lg lg:rounded-r-none lg:[-webkit-mask-image:linear-gradient(to_right,black_70%,transparent_100%)] lg:[mask-image:linear-gradient(to_right,black_70%,transparent_100%)]"          
+            />
         </div>
         <div className="order-1 lg:order-2">
           <SectionHeading
