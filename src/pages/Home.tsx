@@ -284,6 +284,7 @@ function Industries() {
       </div>
     </section>
   )
+}
 
 /* ------------------------------------------------------------------ */
 /* Featured project (placeholder-honest)                                */
