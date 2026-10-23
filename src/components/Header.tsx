@@ -10,6 +10,7 @@ const NAV = [
   { to: '/services', label: 'Services' },
   { to: '/projects', label: 'Projects & Maintenance' },
   { to: '/knowledge', label: 'Knowledge Centre' },
+  { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact Us' },
 ]
 
@@ -51,10 +52,10 @@ export default function Header() {
     }
   }, [open])
 
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `relative whitespace-nowrap px-3 py-2 text-[13.5px] font-medium transition-colors duration-200 ${
-      isActive ? 'text-white' : 'text-white/65 hover:text-white'
-    } ${isActive ? 'after:absolute after:inset-x-3 after:-bottom-[13px] after:h-[2px] after:bg-brand-bright' : ''}`
+    const linkClass = ({ isActive }: { isActive: boolean }) =>
+     `relative whitespace-nowrap px-2 py-2 text-[13px] font-medium transition-colors duration-200 xl:px-3 xl:text-[13.5px] ${
+       isActive ? 'text-white' : 'text-white/65 hover:text-white'
+     } ${isActive ? 'after:absolute after:inset-x-2 after:-bottom-[13px] after:h-[2px] after:bg-brand-bright xl:after:inset-x-3' : ''}`
 
   return (
     <header
@@ -62,10 +63,10 @@ export default function Header() {
         scrolled ? 'border-white/10 shadow-lg shadow-black/20' : 'border-transparent'
       }`}
     >
-    <div className="shell flex h-[80px] items-center justify-between gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+    <div className="shell flex h-[90px] items-center justify-between gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
         <Link to="/" className="flex shrink-0 flex-col items-start justify-center gap-1 lg:justify-self-start" aria-label="DKSM Group — home">
           <img src={asset('/images/brand/dksm-logo.png')} alt="DKSM Group" className="h-10 w-auto sm:h-11" />
-          <span className="tech-label hidden text-white/60 min-[1160px]:block">
+          <span className="tech-label hidden text-white/60 min-[1280px]:block">
             Fire Protection &amp; MEP
           </span>
         </Link>
@@ -74,53 +75,16 @@ export default function Header() {
         className="hidden items-center lg:flex lg:justify-self-center lg:-translate-x-[12px]"
         aria-label="Main navigation"
       >
-        {NAV.map((item) =>
-          item.to === '/contact' ? (
-            <div key={item.to} className="group relative">
-              <NavLink
-                to={item.to}
-                className={({ isActive }) =>
-                  `${linkClass({ isActive })} flex items-center gap-1 rounded-[3px] group-hover:bg-white/10`
-                }
-                end={false}
-              >
-                {item.label}
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                  className="mt-[1px] transition-transform duration-200 group-hover:rotate-180"
-                >
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </NavLink>
-              <div className="invisible absolute left-0 top-full w-full pt-0 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">                <div className="overflow-hidden whitespace-nowrap rounded-[4px] border border-white/10 bg-ink shadow-lg shadow-black/30">
-                  <NavLink
-                    to="/careers"
-                    className={({ isActive }) =>
-                      `block px-4 py-3 text-[13.5px] font-medium transition-colors ${
-                        isActive ? 'bg-white/10 text-brand-bright' : 'text-white/75 hover:bg-white/10 hover:text-white'
-                      }`
-                    }
-                  >
-                    Careers
-                  </NavLink>
-                </div>
-              </div>
-            </div>
-           ) : (
-             <NavLink key={item.to} to={item.to} className={linkClass} end={item.to === '/'}>
-               {item.label}
-             </NavLink>
-           ),
-        )}
+        {NAV.map((item) => (
+           <NavLink key={item.to} to={item.to} className={linkClass} end={item.to === '/'}>
+            {item.label}
+          </NavLink>
+         ))}
       </nav>
 
         <Link
           to="/contact"
-          className="btn-primary hidden min-h-10 whitespace-nowrap px-5 py-2 text-sm lg:inline-flex lg:justify-self-end"
+          className="btn-primary hidden min-h-10 whitespace-nowrap px-4 xl:px-5 py-2 text-sm lg:inline-flex lg:justify-self-end"
         >
           Discuss a Project
         </Link>
@@ -182,17 +146,7 @@ export default function Header() {
               <span>{item.label}</span>
             </NavLink>
           ))}
-          <NavLink
-            to="/careers"
-            style={{ transitionDelay: open ? `${80 + NAV.length * 45}ms` : '0ms' }}
-            className={({ isActive }) =>
-              `dark-rule-t flex min-h-[48px] items-center py-3 pl-5 font-display text-base font-medium transition-all duration-500 ${
-                open ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
-              } ${isActive ? 'text-brand-bright' : 'text-white/70'}`
-            }
-          >
-            <span>↳ Careers</span>
-          </NavLink>
+
           <Link
             to="/contact"
             className={`btn-primary mt-8 w-full transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0'}`}
