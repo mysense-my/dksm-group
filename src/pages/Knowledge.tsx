@@ -1,12 +1,9 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { asset } from '../lib/asset'
 import { useBreadcrumbSchema, usePageMeta } from '../lib/meta'
 import { useInView } from '../lib/motion'
 import { faqCategories } from '../data/faqs'
 import { articles } from '../data/articles'
 import { news } from '../data/news'
-import { awards } from '../data/credentials'
 import FaqAccordion from '../components/FaqAccordion'
 import { Breadcrumbs, CTABlock, PageHero, SectionHeading } from '../components/primitives'
 
@@ -234,44 +231,6 @@ function CompanyNews() {
   )
 }
 
-/* ------------------------------------------------------------------ */
-/* Awards & recognition                                                 */
-/* ------------------------------------------------------------------ */
-function Awards() {
-  const ref = useInView<HTMLDivElement>()
-  return (
-    <section className="rule-t bg-paper py-20 md:py-24">
-      <div className="shell" ref={ref}>
-        <SectionHeading
-          eyebrow="Awards, recognition & acknowledgement"
-          title="Recognised along the way"
-          lead="Recognition received by DKSM Group companies — award details are being confirmed for publication."
-        />
-        <ul className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-2">
-          {awards.map((a) => (
-            <li key={a.id} className="reveal flex items-center gap-5 rounded-[4px] border border-line bg-white p-6">
-              <span className="flex h-16 w-20 shrink-0 items-center justify-center rounded-[3px] border border-line bg-white p-2">
-                <img src={asset(a.image)} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
-              </span>
-              <div>
-                <p className="font-display text-[15px] font-bold leading-snug text-ink">{a.name}</p>
-                <p className="mt-0.5 text-[12.5px] leading-snug text-steel">{a.org}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <p className="reveal mt-8 text-[14px] text-steel">
-          Registrations and memberships are listed on the{' '}
-          <Link to="/about#credentials" className="text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand">
-            About page
-          </Link>
-          .
-        </p>
-      </div>
-    </section>
-  )
-}
-
 export default function Knowledge() {
   usePageMeta({
     title: 'Knowledge Centre — Fire Protection & MEP Guides | DKSM Group',
@@ -294,7 +253,6 @@ export default function Knowledge() {
       <Articles />
       <CompanyNews />
       <FaqSection />
-      <Awards />
       <CTABlock
         heading="Question not answered here?"
         text="Send it to DKSM’s engineering team — practical questions get practical answers."
