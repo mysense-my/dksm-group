@@ -375,7 +375,7 @@ export default function About() {
       <MissionValues />
       <HowWeWork />
       <SafetyQuality />
-      <TeamOnSite />
+      {false && <TeamOnSite />}
       <Credentials />
       <CTABlock
         heading="Get to know DKSM on your own project"
