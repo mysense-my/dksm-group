@@ -6,10 +6,11 @@
  * every item carries a `category` and a `confirmed` flag.
  */
 
-export type CredentialCategory =
-  | 'Regulatory & Government Registrations'
-  | 'Professional membership'
-  | 'Industry association'
+   export type CredentialCategory =
+     | 'Regulatory & Government Registrations'
+     | 'Professional membership'
+     | 'Industry association'
+     | 'Award'
 
 export interface Credential {
   id: string
@@ -149,13 +150,39 @@ export const credentials: Credential[] = [
     image: '/images/credentials/nfpa.png',
     confirmed: false,
   },
+       {
+       id: 'power-brand',
+       name: 'Malaysia Power Brand',
+       org: 'Asia Entrepreneur Alliance',
+       category: 'Award',
+       image: '/images/credentials/power-brand-2016.png',
+       confirmed: false,
+     },
+     {
+       id: 'scbea',
+       name: 'Sin Chew Business Excellence Award',
+       org: 'Sin Chew Daily',
+       category: 'Award',
+       image: '/images/credentials/scbea-2017.png',
+       confirmed: false,
+     },
+     // TODO: Confirm year (2024 on the timeline, 2026 on the logo) and award name
+     {
+       id: 'moshpa-award',
+       name: 'MOSHPA Prestigious Awards 2026',
+       org: 'Malaysian Occupational Safety and Health Practitioners’ Association',
+       category: 'Award',
+       image: '/images/credentials/moshpa.png ',
+       confirmed: false,
+     },
 ]
 
-export const credentialCategories: CredentialCategory[] = [
-  'Regulatory & Government Registrations',
-  'Professional membership',
-  'Industry association',
-]
+   export const credentialCategories: CredentialCategory[] = [
+     'Regulatory & Government Registrations',
+     'Professional membership',
+     'Industry association',
+     'Award',
+   ]
 
 export const credentialsDisclaimer =
   'Logos shown reflect registrations, memberships, awards and industry affiliations held by DKSM Group companies, as supplied by the company. They do not imply endorsement by the organisations shown. Classifications are being finalised and will be confirmed before launch.'
