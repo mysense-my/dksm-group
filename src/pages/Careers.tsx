@@ -10,20 +10,34 @@ const BREADCRUMB = [
   { name: 'Careers', path: '/careers' },
 ]
 
-// TODO: Confirm a dedicated HR/careers email address with the client —
-// using the general enquiry address as a placeholder until then.
-const CAREERS_EMAIL = 'enquiry@dksm.com.my'
+const CAREERS_EMAIL = 'krethiga@dksm.com.my'
+
+const VACANCIES = [
+  'Tender manager (Fire)',
+  'Tender executive (Fire)',
+  'Account executive',
+  'Safety health officer (SHO)',
+  'Project engineer (Fire)',
+]
 
 function CareersDetails() {
   const ref = useInView<HTMLDivElement>()
   return (
     <div ref={ref} className="flex flex-col gap-8">
       <div className="reveal">
-        <h2 className="tech-label text-brand">Current openings</h2>
+        <h2 className="tech-label text-brand">Job vacancies and career announcements</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-graphite">
-          Job vacancies and career announcements will be published here as the team grows. In the meantime,
-          introduce yourself using the form — DKSM keeps applications on file for upcoming openings.
+          DKSM is hiring for the positions below. Introduce yourself using the form — DKSM also keeps
+          applications on file for upcoming openings.
         </p>
+        <ul className="mt-4 space-y-2">
+          {VACANCIES.map((v) => (
+            <li key={v} className="flex items-start gap-3 text-[15px] text-graphite">
+              <span aria-hidden="true" className="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-brand" />
+              {v}
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="reveal">
         <h2 className="tech-label text-brand">HR enquiries</h2>
@@ -37,9 +51,6 @@ function CareersDetails() {
         <h2 className="tech-label text-brand">Where DKSM works</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-graphite">{serviceRegion}</p>
       </div>
-      <p className="reveal rounded-[3px] border border-line bg-white px-4 py-3 text-[12.5px] leading-relaxed text-steel">
-        A dedicated HR contact and current vacancy listings will be confirmed with DKSM before launch.
-      </p>
     </div>
   )
 }
