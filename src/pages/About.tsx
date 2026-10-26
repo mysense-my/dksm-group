@@ -96,9 +96,14 @@ function Timeline() {
                   </span>
                 )}
               </h3>
-              <p className={`mt-1.5 max-w-2xl text-[14.5px] leading-relaxed ${t.placeholder ? 'text-steel' : 'text-graphite/85'}`}>
-                {t.text}
-              </p>
+               {t.text.split('\n\n').map((para, i) => (
+                <p
+                  key={i}
+                  className={`max-w-2xl text-[14.5px] leading-relaxed ${i === 0 ? 'mt-1.5' : 'mt-1'} ${t.placeholder ? 'text-steel' : 'text-graphite/85'}`}
+                >
+                  {para}
+                </p>
+              ))}
             </li>
           ))}
         </ol>
