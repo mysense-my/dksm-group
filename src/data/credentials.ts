@@ -5,7 +5,6 @@
  * A supplied logo is NOT treated as proof of any particular relationship:
  * every item carries a `category` and a `confirmed` flag.
  */
-
    export type CredentialCategory =
      | 'Regulatory & Government Registrations'
      | 'Professional membership'
