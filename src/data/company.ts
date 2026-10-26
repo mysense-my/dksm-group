@@ -1,16 +1,4 @@
-/**
- * Central company data for the DKSM Group website.
- *
- * ── HONESTY RULES ────────────────────────────────────────────────────
- * Everything in this file is drawn from materials supplied by the client
- * (current Google Sites content, the shared Drive folder, and the
- * supplied 2017 Sin Chew feature on Dyno Klang Fire Protection
- * Engineering Sdn Bhd). Anything not confirmed carries a
- * `// TODO: Confirm with client before launch.` comment — replace those
- * values, do not delete the flags silently.
- */
 
-// The group's existing domain — confirm it will carry the new site at launch.
 export const SITE_URL = 'https://dksm.com.my'
 
 export const company = {
@@ -245,18 +233,20 @@ export const timeline = [
     text: 'The group adopts the DKSM name, carrying four decades of track record forward.',
     placeholder: false,
   },
-  {
-    year: '2023',
-    title: 'New corporate office',
-    text: 'A new corporate office opens, with 100+ additional resources for project support.',
-    placeholder: false,
-  },
-  {
-    year: '2024',
-    title: 'New corporate office & award',
-    text: 'Alam Impian, Shah Alam — MOSHPA Occupational Safety & Health Entrepreneur Excellent Safety Award 2024.',
-    placeholder: false,
-  },
+   {
+     year: '2023',
+     title: 'Strengthening',
+     text: 'Additional 75+ resources to strengthen project delivery team.',
+     placeholder: false,
+   },
+{
+  year: '2024',
+  title: 'New corporate office & award',
+  text: `A new corporate office open at Alam Impian, Shah Alam.
+
+MOSHPA Occupational Safety & Health Entrepreneur Excellent Safety Award 2024.`,
+  placeholder: false,
+},
   {
     year: '2026',
     title: 'First C&S Project',
