@@ -22,6 +22,15 @@ interface Errors {
 
 /** Field ids in display order — used to focus the first invalid field. */
 const FIELD_ORDER = ['name', 'email', 'phone', 'message', 'consent']
+   
+const POSITIONS = [
+     'Tender manager (Fire)',
+     'Tender executive (Fire)',
+     'Account executive',
+     'Safety health officer (SHO)',
+     'Project engineer (Fire)',
+     'Other / general application',
+   ]
 
 const inputClass =
   'w-full rounded-[3px] border border-line bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-steel/80 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand min-h-11'
@@ -137,8 +146,17 @@ export default function CareersForm() {
         <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputClass} aria-required="true" aria-invalid={!!errors.phone} aria-describedby={errors.phone ? 'phone-error' : undefined} />
       </Field>
       <Field id="position" label="Position you're interested in">
-        <input id="position" name="position" type="text" placeholder="e.g. Site Engineer, Technician, Admin" className={inputClass} />
-      </Field>
+       <select id="position" name="position" className={inputClass} defaultValue="">
+        <option value="" disabled>
+          Select a position
+          </option>
+          {POSITIONS.map((p) => (
+            <option key={p} value={p}>
+            {p}
+          </option>
+        ))}
+      </select>
+    </Field>
       <div className="sm:col-span-2">
         <Field id="message" label="Tell us about yourself" required error={errors.message}>
           <textarea
