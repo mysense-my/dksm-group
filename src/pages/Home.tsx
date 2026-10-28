@@ -19,7 +19,7 @@ function AnnouncementBanner() {
   const [dismissed, setDismissed] = useState(false)
   if (!announcement || dismissed) return null
   return (
-    <div className="relative z-40 mt-[68px] bg-brand text-white">
+    <div className="relative z-40 mt-[var(--header-h)] bg-brand text-white">
       <div className="shell flex items-center justify-between gap-4 py-2.5">
         <p className="text-[13.5px] leading-snug">
           {announcement.text}
@@ -49,7 +49,7 @@ function AnnouncementBanner() {
 /* ------------------------------------------------------------------ */
 function Hero() {
   return (
-    <section className="relative flex min-h-[92svh] flex-col bg-ink pt-[68px] text-white">
+    <section className="relative flex min-h-[92svh] flex-col bg-ink pt-[var(--header-h)] text-white">
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <img
           src={asset('/images/backgrounds/hero-home.webp')}

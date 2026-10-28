@@ -14,7 +14,7 @@ const BREADCRUMB = [
 /** Sticky in-page navigation across the six service sections. */
 function ServiceNav() {
   return (
-    <nav aria-label="Services on this page" className="sticky top-[68px] z-30 border-b border-line bg-paper/95 backdrop-blur">
+    <nav aria-label="Services on this page" className="sticky top-[calc(var(--header-h)_+_1px)] z-30 border-b border-line bg-paper/95 backdrop-blur">
       <div className="shell flex gap-1 overflow-x-auto py-2.5">
         {services.map((s) => (
           <a
@@ -33,7 +33,7 @@ function ServiceNav() {
 function ServiceSection({ service, flip }: { service: Service; flip: boolean }) {
   const ref = useInView<HTMLDivElement>(0.08)
   return (
-    <section id={service.id} className="rule-t scroll-mt-[120px] py-16 md:py-24">
+    <section id={service.id} className="rule-t scroll-mt-[calc(var(--header-h)_+_80px)] py-16 md:py-24">
       <div
         ref={ref}
         className={`shell grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${flip ? '' : ''}`}

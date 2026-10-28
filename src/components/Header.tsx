@@ -63,7 +63,7 @@ export default function Header() {
         scrolled ? 'border-white/10 shadow-lg shadow-black/20' : 'border-transparent'
       }`}
     >
-    <div className="shell flex h-[90px] items-center justify-between gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+    <div className="shell flex h-[var(--header-h)] items-center justify-between gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
         <Link to="/" className="flex shrink-0 flex-col items-start justify-center gap-1 lg:justify-self-start" aria-label="DKSM Group — home">
           <img src={asset('/images/brand/dksm-logo.png')} alt="DKSM Group" className="h-10 w-auto sm:h-11" />
           <span className="tech-label hidden text-white/60 min-[1280px]:block">
@@ -116,8 +116,8 @@ export default function Header() {
         aria-label="Site menu"
         onKeyDown={(e) => trapTabKey(e, e.currentTarget)}
       >
-        <div className="shell flex h-[68px] items-center justify-between">
-          <img src={asset('/images/brand/dksm-logo.png')} alt="DKSM Group" className="h-12 w-auto" />
+        <div className="shell flex h-[var(--header-h)] items-center justify-between">
+          <img src={asset('/images/brand/dksm-logo.png')} alt="DKSM Group" className="h-10 w-auto sm:h-11" />
           <button
             ref={closeBtn}
             type="button"

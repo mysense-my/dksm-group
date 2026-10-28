@@ -185,7 +185,7 @@ function IndustryExpertise() {
             <article
               key={ind.id}
               id={ind.id}
-              className="reveal grid scroll-mt-[90px] gap-0 overflow-hidden rounded-[4px] border border-line bg-white md:grid-cols-[260px_1fr]"
+              className="reveal grid scroll-mt-[calc(var(--header-h)_+_24px)] gap-0 overflow-hidden rounded-[4px] border border-line bg-white md:grid-cols-[260px_1fr]"
             >
               <SmartImage
                 src={ind.image}

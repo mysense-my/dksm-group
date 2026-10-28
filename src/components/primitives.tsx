@@ -92,7 +92,7 @@ export function PageHero({
   children?: ReactNode
 }) {
   return (
-    <section className="relative flex min-h-[52vh] items-end bg-ink pt-[68px] text-white">
+    <section className="relative flex min-h-[52vh] items-end bg-ink pt-[var(--header-h)] text-white">
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <img
           src={asset(image)}

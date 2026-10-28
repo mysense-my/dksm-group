@@ -9,7 +9,7 @@ export default function NotFound() {
     noindex: true,
   })
   return (
-    <section className="grid-lines-light flex min-h-[70vh] items-center bg-paper pt-[68px]">
+    <section className="grid-lines-light flex min-h-[70vh] items-center bg-paper pt-[var(--header-h)]">
       <div className="shell py-24 text-center">
         <p className="tech-label text-brand">Error 404</p>
         <h1 className="mt-4 font-extrabold text-ink" style={{ fontSize: 'var(--text-h1)' }}>

@@ -46,6 +46,12 @@
 /* ------------------------------------------------------------------ */
 /* Base                                                                */
 /* ------------------------------------------------------------------ */
+/* Height of the fixed top bar. Everything that must sit below it (page
+   heroes, the Services sticky sub-menu, anchor scroll offsets) reads this,
+   so change the height HERE only — not in Header.tsx. */
+:root {
+  --header-h: 90px;
+}
 html {
   scroll-behavior: smooth;
 }
